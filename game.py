@@ -47,7 +47,9 @@ class Piece:
                     out += ' '
             out += '\n'
         return out
-    def show(self, win, (y, x)):
+        
+    def show(self, win, p):
+        (y, x) = p
         for i,l in enumerate(str(self).split('\n')):
             win.addstr(y+i, x, l)
 
@@ -392,8 +394,8 @@ class Board:
 piece_list = [
 Piece([(0,0)],'1', 'a', (17, 35)), #singleton
 Piece([(0,0),(1,0)],'2h', 'b', (0, 0)), #2h
-Piece([(0,0),(1,0),(2,0)],'3h', 'c', (2, 0)), #
-Piece([(0,0),(1,0),(2,0),(3,0)],'4h', 'd', (4, 0)), #
+Piece([(0,0),(1,0),(2,0)],'3h', 'c', (2, 0)), #3h
+Piece([(0,0),(1,0),(2,0),(3,0)],'4h', 'd', (4, 0)), #4h
 Piece([(0,0),(1,0),(2,0),(3,0),(4,0)], '5h', 'e', (6, 0)), #5h
 Piece([(0,0),(0,1)], '2v', 'f', (0, 18)), #2v
 Piece([(0,0),(0,1),(0,2)], '3v', 'g', (0, 24)), #3v

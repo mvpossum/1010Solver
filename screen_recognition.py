@@ -83,7 +83,7 @@ def main():
         img_with_borders = img.copy()
         if borders is not None:
             cv2.drawContours(img_with_borders, [borders], 0, (255, 0, 0), 3) 
-            persp = apply_prespective_transform(gray, borders)
+            persp = apply_prespective_transform(img, borders)
             plt.subplot(122),plt.imshow(persp, 'gray')
             cv2.imwrite(os.path.join(SCREEN_SAMPLES_DIR, os.path.basename(f)), persp)
         plt.subplot(121),plt.imshow(img_with_borders)
